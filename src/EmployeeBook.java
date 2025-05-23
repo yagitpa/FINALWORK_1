@@ -1,4 +1,4 @@
-public class EmployeeBook {
+class EmployeeBook {
     private Employee[] employees;
     private int size;
 
@@ -123,22 +123,18 @@ public class EmployeeBook {
     public Employee findMinSalaryEmployee() {
         Employee minSalary = null;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null) {
-                if (minSalary == null || employees[i].getSalary() < minSalary.getSalary()) {
-                    minSalary = employees[i];
+            if ((employees[i] != null) && (minSalary == null || employees[i].getSalary() < minSalary.getSalary())) {
+                minSalary = employees[i];
                 }
             }
-        }
         return minSalary;
     }
 
     public Employee findMaxSalaryEmployee() {
         Employee maxSalary = null;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null) {
-                if (maxSalary == null || employees[i].getSalary() > maxSalary.getSalary()) {
-                    maxSalary = employees[i];
-                }
+            if ((employees[i] != null) && (maxSalary == null || employees[i].getSalary() > maxSalary.getSalary())) {
+               maxSalary = employees[i];
             }
         }
         return maxSalary;
